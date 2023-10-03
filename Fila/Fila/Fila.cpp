@@ -1,3 +1,4 @@
+// Vitor Castro Dias //
 #include <iostream>
 using namespace std;
 
@@ -88,13 +89,32 @@ void insere()
 	cin >> novo->valor;
 	novo->prox = NULL;
 
-
+	if (inicio == NULL)
+	{
+		inicio = novo;
+		novo->prox = NULL;
+		cout << "Numero adicionado\n";
+	}else
+	{
+		novo->prox = fim;
+		fim = novo;
+		cout << "Numero adicionado com sucesso\n";
+	}
 }
 
 void remove()
 {
+	NO* aux = inicio;
 
-
+	if(inicio == NULL)
+	{
+		cout << "Fila vazia\n";
+	}else
+	{
+		fim->prox = inicio;
+		cout << "Elemento deletado" << aux->valor << "\n";
+		free(aux);
+	}
 
 }
 
